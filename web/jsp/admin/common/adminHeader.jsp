@@ -1,0 +1,16 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>${title} - 商城后台</title>
+    <meta charset="utf-8">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/admin.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/admin.css" rel="stylesheet">
+</head>
+<body>
+
