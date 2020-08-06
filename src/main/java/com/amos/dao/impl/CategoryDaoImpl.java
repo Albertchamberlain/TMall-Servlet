@@ -13,7 +13,7 @@ import java.util.List;
  * @author Amos
  * @date 8/5/2020 9:01 PM
  */
-public class CategoryImpl  implements CategoryDao {
+public class CategoryDaoImpl implements CategoryDao {
     @Override
     public int getTotal() {
         Integer total = 0;

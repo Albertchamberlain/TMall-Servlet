@@ -9,6 +9,11 @@ import java.util.Date;
  */
 public class DateUtil {
 
+    /**
+     * date to time(d 2 t)
+     * @param date
+     * @return
+     */
     public static Timestamp d2t(Date date){
         if(date == null){
             return null;
@@ -18,6 +23,11 @@ public class DateUtil {
         //java.sql.Timestamp 年月日 时分秒经过 SimpleDateFormat  定制格式化之后.  都可展示对应的年月日时分秒.
     }
 
+    /**
+     * time to date (t 2 d)
+     * @param timestamp
+     * @return
+     */
     public static Date t2d(Timestamp timestamp){
         if(timestamp == null){
             return null;
