@@ -109,8 +109,8 @@ public class CommentDaoImpl implements CommentDao {
             if(rs.next()){
                 comment = new Comment();
                 comment.setId(rs.getInt("id"));
-                comment.setUser(new UserDAO().get(rs.getString("value")));
-                comment.setProduct(new ProductDAO().get(rs.getInt("pid")));
+                comment.setUser(new UserDaoImpl().get(rs.getString("value")));
+                comment.setProduct(new ProductDaoImpl().get(rs.getInt("pid")));
                 comment.setContent(rs.getString("content"));
                 comment.setCreateDate(DateUtil.t2d(rs.getTimestamp("createDate")));
             }
@@ -132,8 +132,8 @@ public class CommentDaoImpl implements CommentDao {
             if(rs.next()){
                 comment = new Comment();
                 comment.setId(rs.getInt("id"));
-                comment.setUser(new UserDAO().get(rs.getString("value")));
-                comment.setProduct(new ProductDAO().get(rs.getInt("pid")));
+                comment.setUser(new UserDaoImpl().get(rs.getString("value")));
+                comment.setProduct(new ProductDaoImpl().get(rs.getInt("pid")));
                 comment.setContent(rs.getString("content"));
                 comment.setCreateDate(DateUtil.t2d(rs.getTimestamp("createDate")));
             }
@@ -156,8 +156,8 @@ public class CommentDaoImpl implements CommentDao {
             while(rs.next()){
                 Comment comment = new Comment();
                 comment.setId(rs.getInt("id"));
-                comment.setUser(new UserDAO().get(rs.getInt("uid")));
-                comment.setProduct(new ProductDAO().get(rs.getInt("pid")));
+                comment.setUser(new UserDaoImpl().get(rs.getInt("uid")));
+                comment.setProduct(new ProductDaoImpl().get(rs.getInt("pid")));
                 comment.setContent(rs.getString("content"));
                 comment.setCreateDate(DateUtil.t2d(rs.getTimestamp("createDate")));
                 commentList.add(comment);
@@ -166,6 +166,5 @@ public class CommentDaoImpl implements CommentDao {
             e.printStackTrace();
         }
         return commentList;
-    }
     }
 }
