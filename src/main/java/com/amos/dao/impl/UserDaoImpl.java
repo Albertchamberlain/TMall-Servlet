@@ -76,10 +76,9 @@ public class UserDaoImpl  implements UserDao {
             e.printStackTrace();
         }
     }
-
     @Override
     public List<User> list(Integer start, Integer count) {
-        List<User> beans = new ArrayList<>();
+        List<User> userList = new ArrayList<>();
         String sql = "select * from user where deleteAt is null limit ?,?";
         try(Connection c = DBUtil.getConnection();
             PreparedStatement ps = c.prepareStatement(sql)){
@@ -87,17 +86,17 @@ public class UserDaoImpl  implements UserDao {
             ps.setInt(2,count);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                User bean = new User();
-                bean.setId(rs.getInt("id"));
-                bean.setName(rs.getString("name"));
-                bean.setGroup(rs.getString("group_"));
-                bean.setPassword(rs.getString("password"));
-                beans.add(bean);
+                User user = new User();
+                user.setId(rs.getInt("id"));
+                user.setName(rs.getString("name"));
+                user.setGroup(rs.getString("group_"));
+                user.setPassword(rs.getString("password"));
+                userList.add(user);
             }
         }catch (SQLException e){
             e.printStackTrace();
         }
-        return beans;
+        return userList;
     }
 
     @Override
