@@ -21,14 +21,12 @@ public class PaginationUtil {
         }catch (Exception ignored){
 
         }
-        //预定义一个param
-        StringBuilder param = new StringBuilder();
 
-        //非Pagination的参数，生成param参数
+        StringBuilder param = new StringBuilder();
         Enumeration enu=request.getParameterNames();
         while(enu.hasMoreElements()){
             String paraName=(String)enu.nextElement();
-            if(!paraName.equals("pageStart")) {
+            if(!"pageStart".equals(paraName)) {
                 param.append('&').append(paraName).append("=").append(request.getParameter(paraName));
             }
         }
