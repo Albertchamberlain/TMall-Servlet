@@ -2,6 +2,7 @@ package com.amos.dao.impl;
 
 import com.amos.bean.OrderItem;
 import com.amos.dao.OrderItemDao;
+import com.amos.service.ProductService;
 import com.amos.utils.DBUtil;
 import com.amos.utils.DateUtil;
 
@@ -111,7 +112,7 @@ public class OrderItemDaoImpl implements OrderItemDao {
                 orderItem = new OrderItem();
                 orderItem.setId(rs.getInt("id"));
                 orderItem.setOrder(new OrderDaoImpl().get(rs.getInt("oid")));
-                orderItem.setProduct(new ProductDAO().get(rs.getInt("uid")));
+                orderItem.setProduct(new ProductDaoImpl().get(rs.getInt("uid")));
                 orderItem.setNumber(rs.getInt("number"));
                 orderItem.setSum(rs.getBigDecimal("sum"));
             }
@@ -159,7 +160,7 @@ public class OrderItemDaoImpl implements OrderItemDao {
                 OrderItem orderItem = new OrderItem();
                 orderItem.setId(rs.getInt("id"));
                 orderItem.setOrder(new OrderDaoImpl().get(rs.getInt("oid")));
-                orderItem.setProduct(new ProductDAO().get(rs.getInt("uid")));
+                orderItem.setProduct(new ProductDaoImpl().get(rs.getInt("uid")));
                 orderItem.setNumber(rs.getInt("number"));
                 orderItem.setSum(rs.getBigDecimal("sum"));
                 orderItemList.add(orderItem);
