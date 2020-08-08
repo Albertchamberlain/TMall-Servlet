@@ -22,10 +22,11 @@ public abstract class BaseServlet extends HttpServlet {
             String redirect = m.invoke(this,req,resp).toString();
             if(redirect.startsWith("@")){
                 resp.sendRedirect(redirect.substring(1));
-            }else if(redirect.startsWith("%"))
+            }else if(redirect.startsWith("%")) {
                 resp.getWriter().print(redirect.substring(1));
-            else
+            } else {
                 req.getRequestDispatcher(redirect).forward(req, resp);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
