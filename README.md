@@ -15,10 +15,10 @@
 
 如何使用：
 
-1.创建JavaEE项目
-2.添加Maven结构（Add FrameWork Support）
-3.添加pom.xml文件
-4.运行pom.xml文件导入依赖包
-5.替换对应的文件夹即可
-6.运行项目
+-1.创建JavaEE项目
+-2.添加Maven结构（Add FrameWork Support）
+-3.添加pom.xml文件
+-4.运行pom.xml文件导入依赖包
+-5.替换对应的文件夹即可
+-6.运行项目
 
