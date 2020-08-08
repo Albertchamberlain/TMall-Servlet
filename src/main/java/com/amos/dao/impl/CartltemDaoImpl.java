@@ -2,6 +2,8 @@ package com.amos.dao.impl;
 
 import com.amos.bean.CartItem;
 import com.amos.dao.CartItemDao;
+import com.amos.dao.UserDao;
+import com.amos.service.ProductService;
 import com.amos.utils.DBUtil;
 import com.amos.utils.DateUtil;
 
@@ -92,7 +94,7 @@ public class CartltemDaoImpl implements CartItemDao {
             if(rs.next()){
                 cartItem = new CartItem();
                 cartItem.setId(rs.getInt("id"));
-                cartItem.setUser(new UserDao().get(rs.getInt("uid")));
+                cartItem.setUser(new UserDaoImpl().get(rs.getInt("uid")));
                 cartItem.setProduct(new ProductService().get(rs.getInt("pid")));
                 cartItem.setNumber(rs.getInt("number"));
                 cartItem.setSum(rs.getBigDecimal("sum"));
@@ -116,7 +118,7 @@ public class CartltemDaoImpl implements CartItemDao {
             while(rs.next()){
                 CartItem bean = new CartItem();
                 bean.setId(rs.getInt("id"));
-                bean.setUser(new UserDao().get(rs.getInt("uid")));
+                bean.setUser(new UserDaoImpl().get(rs.getInt("uid")));
                 bean.setProduct(new ProductService().get(rs.getInt("pid")));
                 bean.setNumber(rs.getInt("number"));
                 bean.setSum(rs.getBigDecimal("sum"));

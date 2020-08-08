@@ -114,7 +114,7 @@ public class OrderDaoImpl  implements OrderDao {
             if(rs.next()){
                 order = new Order();
                 order.setId(rs.getInt("id"));
-                order.setUser(new UserDAO().get(rs.getInt("uid")));
+                order.setUser(new UserDaoImpl().get(rs.getInt("uid")));
                 order.setOrderCode(rs.getString("orderCode"));
                 order.setSum(rs.getBigDecimal("sum"));
                 order.setAddress(rs.getString("address"));
@@ -146,7 +146,7 @@ public class OrderDaoImpl  implements OrderDao {
             while(rs.next()){
                 Order order = new Order();
                 order.setId(rs.getInt("id"));
-                order.setUser(new UserDAO().get(rs.getInt("uid")));
+                order.setUser(new UserDaoImpl().get(rs.getInt("uid")));
                 order.setOrderCode(rs.getString("orderCode"));
                 order.setSum(rs.getBigDecimal("sum"));
                 order.setAddress(rs.getString("address"));
@@ -185,7 +185,7 @@ public class OrderDaoImpl  implements OrderDao {
             while(rs.next()){
                 Order order = new Order();
                 order.setId(rs.getInt("id"));
-                order.setUser(new UserDAO().get(rs.getInt("uid")));
+                order.setUser(new UserDaoImpl().get(rs.getInt("uid")));
                 order.setOrderCode(rs.getString("orderCode"));
                 order.setAddress(rs.getString("address"));
                 order.setPost(rs.getString("post"));
