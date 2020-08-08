@@ -41,6 +41,7 @@ public class ProductImageService {
     public List<ProductImage> listTopImage(int pid, int start , int count){
         return dao.list(pid,ImageType.TYPE_TOP,start,count);
     }
+
     public List<ProductImage> listDetailImage(int pid, int start , int count){
         return dao.list(pid,ImageType.TYPE_DETAIL,start,count);
     }
